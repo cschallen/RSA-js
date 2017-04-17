@@ -5,12 +5,6 @@
     <title>Trabalho de Auditoria e Segurança de Software</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <style media="screen">
     .hue{
         background-color: red;
@@ -54,7 +48,7 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
                 <option value="">Escolha E</option>
             </select>
 
-            <button type="button" class="btn btn-success" onclick="showValuesE()">Confirmar</button>
+            <button onclick="showValuesE()" type="button" class="btn btn-success">Confirmar</button>
 
 
         </div>
@@ -84,8 +78,8 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
 
 
     <!--
-    N => P * Q
-    Z => (P - 1) * (Q - 1)
+    N => P * Q OK
+    Z => (P - 1) * (Q - 1) OK
     E => primo relativo a Z (não tenha fatores em comum)
     D => E * D = (múltiplo de Z) + 1
     C (cifragem) => M^E mod N
@@ -97,6 +91,31 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
 
 
 <script>
+var valueN = 0;
+var valueZ = 0;
+var valueE = 0;
+var valueD = 0;
+var valueC = 0;
+var valueM = 0;
+
+
+function setValueN(p, q){
+    valueN = parseInt(p.value) * parseInt(q.value);
+}
+
+function setValueZ(p, q){
+    valueZ = (parseInt(p.value) - 1) * (parseInt(q.value) - 1);
+}
+
+
+function showValuesE(){
+    var valueP = document.getElementById("selectP");
+    var valueQ = document.getElementById("selectQ");
+
+    setValueN(valueP, valueQ);
+    setValueZ(valueP, valueQ);
+
+}
 // Aqui começa a função que enche os dropdowns
 function getPrimes(max) {
     var sieve = [], i, j, primes = [];
@@ -120,7 +139,7 @@ arrayNumberPrimes = getPrimes(1000);
 
 var selectList = document.createElement("select");
 selectList.setAttribute("class", "btn btn-default dropdown-toggle");
-selectList.id = "mySelect";
+selectList.id = "selectP";
 myDiv.appendChild(selectList);
 var optionDefault = document.createElement("option");
 optionDefault.text = "Escolha P";
@@ -129,7 +148,7 @@ selectList.appendChild(optionDefault);
 var selectList2 = document.createElement("select");
 selectList2.style.margin = "10px";
 selectList2.setAttribute("class", "btn btn-default dropdown-toggle");
-selectList2.id = "mySelect";
+selectList2.id = "selectQ";
 myDiv.appendChild(selectList2);
 var optionDefault2 = document.createElement("option");
 optionDefault2.text = "Escolha Q";
@@ -150,9 +169,6 @@ for(var i = 0; i < arrayNumberPrimes.length; i++){
 }
 // fim
 
-function showValuesE(){
-
-}
 
 
 
