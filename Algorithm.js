@@ -35,15 +35,17 @@ function setValueQ(q){
 function generateEValues(){
     var valueP = document.getElementById("selectP");
     var valueQ = document.getElementById("selectQ");
+
     setValueP(valueP);
     setValueQ(valueQ);
     setValueN(valueP, valueQ);
-    var z = setValueZ(valueP, valueQ);
+    setValueZ(valueP, valueQ);
     //E => primo relativo a Z (não tenha fatores em comum)
     var selectE = document.getElementById("selectE");
     var valuesE = [];
 
-    valuesE = returnArrayPrimeRelativeToZ(z);
+    valuesE = returnArrayPrimeRelativeToZ(valueZ);
+    // alert(valuesE.length);
     for(var i = 0; i < valuesE.length; i++){
         var option3 = document.createElement("option");
         option3.setAttribute("class", "btn btn-default dropdown-toggle");
@@ -56,9 +58,12 @@ function generateEValues(){
 
 function returnArrayPrimeRelativeToZ(Zvalue){
     var arrayE = [];
-    for(var i = 0; i < 1000; i++){
+    for(var i = 2; i < 1000; i++){
         var primeRelative = false;
+        // alert("É pra ser falso: " + primeRelative);
+        // alert(Zvalue);
         primeRelative = isPrimeRelative(Zvalue, i);
+        // alert(i + " e " + "10 são primo relativo?" + primeRelative);
 
         if(primeRelative){
             arrayE.push(i);
@@ -69,13 +74,12 @@ function returnArrayPrimeRelativeToZ(Zvalue){
 }
 
 function isPrimeRelative(num1, num2){
+    // alert(num1 + " e " + num2);
     var array1 = [];
     var array2 = [];
     var isPrime = true;
     array1 = returnFactors(num1);
     array2 = returnFactors(num2);
-    alert(array1.length);
-    alert(array2.length);
 
 
     for(var i = 0; i < array1.length; i++){
@@ -96,7 +100,6 @@ function returnFactors(num){
     for(var i = 2; i <= num; i++){
         if(num % i == 0){
             factors.push(i);
-            alert(i);
         }
     }
     return factors;
