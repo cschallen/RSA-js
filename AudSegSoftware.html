@@ -109,7 +109,7 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
             </select>
 
             <button onclick="generateEValues()" type="button" class="btn btn-success">Gerar E</button>
-            <button onclick="setValues()" type="button" class="btn btn-success">Confirmar</button>
+            <button onclick="setValueE(); setValueD();" type="button" class="btn btn-success">Confirmar</button>
 
 
         </div>
@@ -161,7 +161,7 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
     <!--
     N => P * Q OK
     Z => (P - 1) * (Q - 1) OK
-    E => primo relativo a Z (não tenha fatores em comum)
+    E => primo relativo a Z (não tenha fatores em comum) OK
     D => E * D = (múltiplo de Z) + 1
     C (cifragem) => M^E mod N
     M (decifragem) => C^D mod N

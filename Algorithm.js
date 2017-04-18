@@ -1,7 +1,20 @@
+function setValueD(d){
+    // D => E * D = (múltiplo de Z) + 1
+    valueD = searchValueD(d);
+    alert(valueD);
+}
+
+function searchValueD(d){
+    var e = valueE;
+    var newD = 0;
+
+    
+
+    return newD;
+}
+
 function setValueN(p, q){
     valueN = parseInt(p.value) * parseInt(q.value);
-    // refreshValues("P", p.value);
-    // refreshValues("Q", q.value);
     refreshValues("N", valueN);
 }
 
@@ -20,10 +33,14 @@ function setValueQ(q){
     refreshValues("Q", valueQ);
 
 }
-// function setValueE(z){
-//
-// }
-//
+
+function setValueE(){
+    var e = document.getElementById("selectE");
+    valueE = parseInt(e.value);
+    // alert(valueE.value);
+    refreshValues("E", valueE);
+}
+
 // function setValues(){
 //
 //     setValueN(valueP, valueQ);
@@ -104,9 +121,3 @@ function returnFactors(num){
     }
     return factors;
 }
-
-//function setValueD(e, z){
-// D => E * D = (múltiplo de Z) + 1
-//valueD = 10;
-//refreshValues("D", valueD);
-//}
