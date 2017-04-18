@@ -6,37 +6,25 @@ var valueC = 0;
 var valueM = 0;
 
 
+function refreshValues(idValue, value){
+	var newValue = document.getElementById(idValue);
 
-function setValueN(p, q){
-    valueN = parseInt(p.value) * parseInt(q.value);
+	newValue.innerHTML = value;
 }
 
-function setValueZ(p, q){
-    valueZ = (parseInt(p.value) - 1) * (parseInt(q.value) - 1);
-}
-
-
-function showValuesE(){
-    var valueP = document.getElementById("selectP");
-    var valueQ = document.getElementById("selectQ");
-
-    setValueN(valueP, valueQ);
-    setValueZ(valueP, valueQ);
-
-}
 // Aqui começa a função que enche os dropdowns
 function getPrimes(max) {
-    var sieve = [], i, j, primes = [];
-    // sieve = peneira
-    for(i = 2; i <= max; ++i) {
-        if (!sieve[i]) {
-            primes.push(i);
-            for (j = i << 1; j <= max; j += i) {
-                sieve[j] = true;
-            }
-        }
-    }
-    return primes;
+	var sieve = [], i, j, primes = [];
+	// sieve = peneira
+	for(i = 2; i <= max; ++i) {
+		if (!sieve[i]) {
+			primes.push(i);
+			for (j = i << 1; j <= max; j += i) {
+				sieve[j] = true;
+			}
+		}
+	}
+	return primes;
 }
 
 
@@ -64,15 +52,17 @@ selectList2.appendChild(optionDefault2);
 
 
 for(var i = 0; i < arrayNumberPrimes.length; i++){
-    var option = document.createElement("option");
-    option.value = arrayNumberPrimes[i];
-    option.text = arrayNumberPrimes[i];
-    selectList.appendChild(option);
+	var option = document.createElement("option");
+	option.setAttribute("class", "btn btn-default dropdown-toggle");
+	option.value = arrayNumberPrimes[i];
+	option.text = arrayNumberPrimes[i];
+	selectList.appendChild(option);
 }
 for(var i = 0; i < arrayNumberPrimes.length; i++){
-    var option2 = document.createElement("option");
-    option2.value = arrayNumberPrimes[i];
-    option2.text = arrayNumberPrimes[i];
-    selectList2.appendChild(option2);
+	var option2 = document.createElement("option");
+	option2.setAttribute("class", "btn btn-default dropdown-toggle");
+	option2.value = arrayNumberPrimes[i];
+	option2.text = arrayNumberPrimes[i];
+	selectList2.appendChild(option2);
 }
 // fim

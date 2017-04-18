@@ -1,6 +1,17 @@
 .hue{
     background-color: red;
 }
+
 .dropdown-padding{
     padding: 50px;
+}
+
+th, td{
+	background-color: #eacfcf;
+	border: solid 1px black;
+	padding: 7px;
+	text-align: center;
+}
+table{
+	margin: 10px;
 }
