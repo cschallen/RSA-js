@@ -1,16 +1,7 @@
-function setValueD(d){
-    // D => E * D = (múltiplo de Z) + 1
-    valueD = searchValueD(d);
+function setValueD(){
+    valueD = searchValueD();
+    refreshValues("D", valueD);
     alert(valueD);
-}
-
-function searchValueD(d){
-    var e = valueE;
-    var newD = 0;
-
-    
-
-    return newD;
 }
 
 function setValueN(p, q){
@@ -41,13 +32,28 @@ function setValueE(){
     refreshValues("E", valueE);
 }
 
-// function setValues(){
-//
-//     setValueN(valueP, valueQ);
-//     setValueZ(valueP, valueQ);
-//     // setValueE(valueZ)
-//     // setValueD(valueE, valueZ);
-// }
+function searchValueD(){
+    for(var i = valueZ; i < 1000; i += valueZ){
+        var isValidValueForD = algorithmForDValue(i);
+
+        if(isValidValueForD){
+            return i;
+        }
+    }
+    return i;
+}
+
+function algorithmForDValue(num){
+    // D => E * D = (múltiplo de Z) + 1
+    var resultExpression = ((num + 1) / valueE);
+
+    if(num == resultExpression){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 function generateEValues(){
     var valueP = document.getElementById("selectP");
