@@ -6,6 +6,10 @@
     padding: 50px;
 }
 
+.margin-default{
+    margin: 10px;
+}
+
 th, td{
 	background-color: #eacfcf;
 	border: solid 1px black;

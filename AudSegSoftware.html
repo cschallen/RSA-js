@@ -106,15 +106,24 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
             </div>
             <div class="col-lg-3 col-lg-offset-1">
 
-            <select id="selectE" class="btn btn-default dropdown-toggle" name="">
-                <option>Escolha E</option>
-            </select>
-        </div>
+                <select id="selectE" class="btn btn-default dropdown-toggle" name="">
+                    <option>Escolha E</option>
+                </select>
+            </div>
 
             <div class="padding-default">
 
                 <button onclick="generateEValues()" type="button" class="btn btn-default">Gerar E</button>
                 <button onclick="setValueE(); setValueD();" type="button" class="btn btn-success">Confirmar</button>
+            </div>
+
+
+            <div class="input-group">
+                <div class="">
+                    <input type="text" class="form-control">
+                </div>
+                <button onclick="alert('criptografei')" type="button" class="btn btn-success margin-default">Criptografar</button>
+                <button onclick="alert('descriptografei')" type="button" class="btn btn-success margin-default">Decriptografar</button>
             </div>
 
 
