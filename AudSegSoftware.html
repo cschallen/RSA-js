@@ -30,6 +30,7 @@ cada desenvolvedor define como irá codificar. O importante é que a mensagem ci
 pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
 
 
+</div>
 <body>
 
     <div class="col-lg-offset-2 col-lg-8">
@@ -40,6 +41,47 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
     </div>
 
     <div class="col-lg-offset-1 col-lg-10">
+        <div class="col-lg-3">
+            <p>
+                P:
+                <b id="P"></b>
+            </p>
+
+            <p>
+                Q:
+                <b id="Q"></b>
+            </p>
+
+            <p>
+                N:
+                <b id="N"></b>
+            </p>
+
+            <p>
+                Z:
+                <b id="Z"></b>
+            </p>
+
+            <p>
+                E:
+                <b id="E"></b>
+            </p>
+
+            <p>
+                D:
+                <b id="D"></b>
+            </p>
+
+            <p>
+                C:
+                <b id="C"></b>
+            </p>
+
+            <p>
+                M:
+                <b id="M"></b>
+            </p>
+        </div>
 
         <div class="col-lg-offset-4 padding-default">
             <div id="myDiv">
@@ -60,72 +102,27 @@ pois eu farei testes para verificar o que ocorre ao decifrar a mensagem. -->
 
             <div class="input-group">
                 <div class="">
-                    <input id="inputPrimary" type="text" class="form-control">
+                    <textarea rows="8" id="inputPrimary" type="text" class="form-control"></textarea>
                 </div>
                 <button onclick="encrypt()" type="button" class="btn btn-success margin-default">Criptografar</button>
                 <button onclick="alert('descriptografei')" type="button" class="btn btn-success margin-default">Decriptografar</button>
             </div>
-
-
         </div>
-        <p>
-            P:
-            <b id="P"></b>
-        </p>
-
-        <p>
-            Q:
-            <b id="Q"></b>
-        </p>
-
-        <p>
-            N:
-            <b id="N"></b>
-        </p>
-
-        <p>
-            Z:
-            <b id="Z"></b>
-        </p>
-
-        <p>
-            E:
-            <b id="E"></b>
-        </p>
-
-        <p>
-            D:
-            <b id="D"></b>
-        </p>
-
-        <p>
-            C:
-            <b id="C"></b>
-        </p>
-
-        <p>
-            M:
-            <b id="M"></b>
-        </p>
 
 
+        <!--
+        N => P * Q OK
+        Z => (P - 1) * (Q - 1) OK
+        E => primo relativo a Z (não tenha fatores em comum) OK
+        D => E * D = (múltiplo de Z) + 1 OK
+        C (cifragem) => M^E mod N
+        M (decifragem) => C^D mod N
+        Chaves => (E, N) e (D, N)
+    -->
 
-    </div>
-
-
-    <!--
-    N => P * Q OK
-    Z => (P - 1) * (Q - 1) OK
-    E => primo relativo a Z (não tenha fatores em comum) OK
-    D => E * D = (múltiplo de Z) + 1 OK
-    C (cifragem) => M^E mod N
-    M (decifragem) => C^D mod N
-    Chaves => (E, N) e (D, N)
--->
-
-<script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
-<script type="text/javascript" src="AudSegSoftware.js"></script>
-<script type="text/javascript" src="Algorithm.js"></script>
-<script type="text/javascript" src="algorithmEncrypt.js"></script>
+    <script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
+    <script type="text/javascript" src="AudSegSoftware.js"></script>
+    <script type="text/javascript" src="Algorithm.js"></script>
+    <script type="text/javascript" src="algorithmEncrypt.js"></script>
 </body>
 </html>
