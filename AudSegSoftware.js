@@ -32,10 +32,6 @@ var hashAlphabet = {"A": Math.floor(Math.random() * 2) + 10,
 					"Y": Math.floor(Math.random() * 3) + 32,
 					"Z": Math.floor(Math.random() * 3) + 62}
 
-function generateNumberForHash(){
-
-}
-
 function getHashValues(value){
 	var arrayValues = [];
 
@@ -53,7 +49,6 @@ function getHashValues(value){
 function generateAlphabetInHTML(){
 	var lineAlphabet = document.getElementById('trAlphabet');
 	var arrayKeysHash = getHashValues("key");
-	// console.log(arrayKeysHash);
 
 	for(var i in arrayKeysHash){
 		var thLetter = document.createElement("th");
@@ -65,19 +60,16 @@ function generateAlphabetInHTML(){
 function generateValuesInHTML(){
 	var lineValues = document.getElementById('trValues');
 	var arrayValuesHash = getHashValues("value");
-	// console.log(arrayKeysHash);
 
 	for(var i in arrayValuesHash){
 		var thValue = document.createElement("th");
 		thValue.innerHTML = arrayValuesHash[i];
 		lineValues.appendChild(thValue);
 	}
-
 }
 
 function refreshValues(idValue, value){
 	var newValue = document.getElementById(idValue);
-
 	newValue.innerHTML = value;
 }
 
