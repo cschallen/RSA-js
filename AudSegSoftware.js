@@ -5,36 +5,36 @@ var valueD = 0;
 var valueC = 0;
 var valueM = 0;
 
-var hashAlphabet = {A: 20,
-					B: 21,
-					C: 22,
-					D: 23,
-					E: 24,
-					F: 25,
-					G: 26,
-					H: 27,
-					I: 28,
-					J: 29,
-					K: 30,
-					L: 31,
-					M: 32,
-					N: 33,
-					O: 34,
-					P: 35,
-					Q: 36,
-					R: 37,
-					S: 38,
-					T: 39,
-					U: 40,
-					V: 41,
-					W: 42,
-					X: 43,
-					Y: 44,
-					Z: 45}
+var hashAlphabet = {"A": Math.floor(Math.random() * 2) + 10,
+					"B": Math.floor(Math.random() * 5) + 15,
+					"C": Math.floor(Math.random() * 5) + 20,
+					"D": Math.floor(Math.random() * 5) + 25,
+					"E": Math.floor(Math.random() * 2) + 30,
+					"F": Math.floor(Math.random() * 5) + 35,
+					"G": Math.floor(Math.random() * 5) + 40,
+					"H": Math.floor(Math.random() * 5) + 45,
+					"I": Math.floor(Math.random() * 5) + 50,
+					"J": Math.floor(Math.random() * 5) + 55,
+					"K": Math.floor(Math.random() * 2) + 60,
+					"L": Math.floor(Math.random() * 5) + 65,
+					"M": Math.floor(Math.random() * 5) + 70,
+					"N": Math.floor(Math.random() * 5) + 75,
+					"O": Math.floor(Math.random() * 3) + 80,
+					"P": Math.floor(Math.random() * 3) + 83,
+					"Q": Math.floor(Math.random() * 3) + 86,
+					"R": Math.floor(Math.random() * 2) + 89,
+					"S": Math.floor(Math.random() * 2) + 91,
+					"T": Math.floor(Math.random() * 2) + 93,
+					"U": Math.floor(Math.random() * 2) + 95,
+					"V": Math.floor(Math.random() * 2) + 97,
+					"W": Math.floor(Math.random() * 5) + 99,
+					"X": Math.floor(Math.random() * 3) + 12,
+					"Y": Math.floor(Math.random() * 3) + 32,
+					"Z": Math.floor(Math.random() * 3) + 62}
 
-// function generateHashAlphabet(){
-//
-// }
+function generateNumberForHash(){
+
+}
 
 function getHashValues(value){
 	var arrayValues = [];
