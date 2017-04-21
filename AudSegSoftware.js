@@ -5,6 +5,75 @@ var valueD = 0;
 var valueC = 0;
 var valueM = 0;
 
+var hashAlphabet = {A: 20,
+					B: 21,
+					C: 22,
+					D: 23,
+					E: 24,
+					F: 25,
+					G: 26,
+					H: 27,
+					I: 28,
+					J: 29,
+					K: 30,
+					L: 31,
+					M: 32,
+					N: 33,
+					O: 34,
+					P: 35,
+					Q: 36,
+					R: 37,
+					S: 38,
+					T: 39,
+					U: 40,
+					V: 41,
+					W: 42,
+					X: 43,
+					Y: 44,
+					Z: 45}
+
+// function generateHashAlphabet(){
+//
+// }
+
+function getHashValues(value){
+	var arrayValues = [];
+
+	for(var key in hashAlphabet){
+		if(value == "key"){
+			arrayValues.push(key);
+		}
+		else if (value == "value") {
+			arrayValues.push(hashAlphabet[key]);
+		}
+	}
+	return arrayValues;
+}
+
+function generateAlphabetInHTML(){
+	var lineAlphabet = document.getElementById('trAlphabet');
+	var arrayKeysHash = getHashValues("key");
+	// console.log(arrayKeysHash);
+
+	for(var i in arrayKeysHash){
+		var thLetter = document.createElement("th");
+		thLetter.innerHTML = arrayKeysHash[i];
+		lineAlphabet.appendChild(thLetter);
+	}
+}
+
+function generateValuesInHTML(){
+	var lineValues = document.getElementById('trValues');
+	var arrayValuesHash = getHashValues("value");
+	// console.log(arrayKeysHash);
+
+	for(var i in arrayValuesHash){
+		var thValue = document.createElement("th");
+		thValue.innerHTML = arrayValuesHash[i];
+		lineValues.appendChild(thValue);
+	}
+
+}
 
 function refreshValues(idValue, value){
 	var newValue = document.getElementById(idValue);
@@ -27,6 +96,8 @@ function getPrimes(max) {
 	return primes;
 }
 
+generateAlphabetInHTML();
+generateValuesInHTML();
 
 var myDiv = document.getElementById("myDiv");
 var arrayNumberPrimes = [];
