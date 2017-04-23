@@ -2,6 +2,9 @@ function triggerEncryptedMethod() {
     var textToEncrypt = document.getElementById("inputPrimary").value;
     var textEncrypted = encrypt(textToEncrypt);
     setValuesEncryptedInHash();
+    // createEncryptedValuesInHTML();
+    // função futura para mostrar na tela os valores criptografados, pra auxiliar
+    // na hora de editar o input
     setInputValue("inputPrimary", textEncrypted);
 }
 
