@@ -2,35 +2,39 @@ var valueN = 0;
 var valueZ = 0;
 var valueE = 0;
 var valueD = 0;
-var valueC = 0;
-var valueM = 0;
 
-var hashAlphabet = {"A": Math.floor(Math.random() * 2) + 10,
-					"B": Math.floor(Math.random() * 5) + 15,
-					"C": Math.floor(Math.random() * 5) + 20,
-					"D": Math.floor(Math.random() * 5) + 25,
-					"E": Math.floor(Math.random() * 2) + 30,
-					"F": Math.floor(Math.random() * 5) + 35,
-					"G": Math.floor(Math.random() * 5) + 40,
-					"H": Math.floor(Math.random() * 5) + 45,
-					"I": Math.floor(Math.random() * 5) + 50,
-					"J": Math.floor(Math.random() * 5) + 55,
-					"K": Math.floor(Math.random() * 2) + 60,
-					"L": Math.floor(Math.random() * 5) + 65,
-					"M": Math.floor(Math.random() * 5) + 70,
-					"N": Math.floor(Math.random() * 5) + 75,
-					"O": Math.floor(Math.random() * 3) + 80,
-					"P": Math.floor(Math.random() * 3) + 83,
-					"Q": Math.floor(Math.random() * 3) + 86,
-					"R": Math.floor(Math.random() * 2) + 89,
-					"S": Math.floor(Math.random() * 2) + 91,
-					"T": Math.floor(Math.random() * 2) + 93,
-					"U": Math.floor(Math.random() * 2) + 95,
-					"V": Math.floor(Math.random() * 2) + 97,
-					"W": Math.floor(Math.random() * 5) + 99,
-					"X": Math.floor(Math.random() * 3) + 12,
-					"Y": Math.floor(Math.random() * 3) + 32,
-					"Z": Math.floor(Math.random() * 3) + 62}
+var hashAlphabet = {"A": [Math.floor(Math.random() * 2) + 10, 0],
+					"B": [Math.floor(Math.random() * 5) + 15, 0],
+					"C": [Math.floor(Math.random() * 5) + 20, 0],
+					"D": [Math.floor(Math.random() * 5) + 25, 0],
+					"E": [Math.floor(Math.random() * 2) + 30, 0],
+					"F": [Math.floor(Math.random() * 5) + 35, 0],
+					"G": [Math.floor(Math.random() * 5) + 40, 0],
+					"H": [Math.floor(Math.random() * 5) + 45, 0],
+					"I": [Math.floor(Math.random() * 5) + 50, 0],
+					"J": [Math.floor(Math.random() * 5) + 55, 0],
+					"K": [Math.floor(Math.random() * 2) + 60, 0],
+					"L": [Math.floor(Math.random() * 5) + 65, 0],
+					"M": [Math.floor(Math.random() * 5) + 70, 0],
+					"N": [Math.floor(Math.random() * 5) + 75, 0],
+					"O": [Math.floor(Math.random() * 3) + 80, 0],
+					"P": [Math.floor(Math.random() * 3) + 83, 0],
+					"Q": [Math.floor(Math.random() * 3) + 86, 0],
+					"R": [Math.floor(Math.random() * 2) + 89, 0],
+					"S": [Math.floor(Math.random() * 2) + 91, 0],
+					"T": [Math.floor(Math.random() * 2) + 93, 0],
+					"U": [Math.floor(Math.random() * 2) + 95, 0],
+					"V": [Math.floor(Math.random() * 2) + 97, 0],
+					"W": [Math.floor(Math.random() * 5) + 99, 0],
+					"X": [Math.floor(Math.random() * 3) + 12, 0],
+					"Y": [Math.floor(Math.random() * 3) + 32, 0],
+					"Z": [Math.floor(Math.random() * 3) + 62, 0]}
+
+// alterHashAlphabetValueEncrypted("A", 122);
+function alterHashAlphabetValueEncrypted(letter, value) {
+	hashAlphabet[letter][1] = value;
+	// alert(hashAlphabet[letter][1]);
+}
 
 function getHashValues(value){
 	var arrayValues = [];
@@ -40,7 +44,7 @@ function getHashValues(value){
 			arrayValues.push(key);
 		}
 		else if (value == "value") {
-			arrayValues.push(hashAlphabet[key]);
+			arrayValues.push(hashAlphabet[key][0]);
 		}
 	}
 	return arrayValues;

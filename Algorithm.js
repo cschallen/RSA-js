@@ -1,3 +1,9 @@
+function setValueC(m, e, n) {
+    var valueC = (bigInt(m).pow(e)).divmod(n);
+    valueC = valueC.remainder.value;
+    return valueC;
+}
+
 function setValueD(){
     valueD = searchValueD();
     refreshValues("D", valueD);
@@ -27,6 +33,10 @@ function setValueE(){
     var e = document.getElementById("selectE");
     valueE = parseInt(e.value);
     refreshValues("E", valueE);
+}
+
+function setInputValue(id, text) {
+    document.getElementById(id).value = text;
 }
 
 function searchValueD(){
