@@ -13,9 +13,7 @@ function encrypt(toEncrypt) {
     for(var i = 0; i < toEncrypt.length; i++){
         var valueM = getValueByKey(toEncrypt[i].toUpperCase());
         var charEncrypted;
-        //
-        // charEncrypted = (bigInt(valueM).pow(valueE));
-        // charEncrypted = charEncrypted.divmod(valueN);
+
         charEncrypted = setValueC(valueM, valueE, valueN);
         textEncrypted += charEncrypted;
     }

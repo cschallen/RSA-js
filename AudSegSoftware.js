@@ -30,10 +30,8 @@ var hashAlphabet = {"A": [Math.floor(Math.random() * 2) + 10, 0],
 					"Y": [Math.floor(Math.random() * 3) + 32, 0],
 					"Z": [Math.floor(Math.random() * 3) + 62, 0]}
 
-// alterHashAlphabetValueEncrypted("A", 122);
 function alterHashAlphabetValueEncrypted(letter, value) {
 	hashAlphabet[letter][1] = value;
-	// alert(hashAlphabet[letter][1]);
 }
 
 function getHashValues(value){
@@ -45,6 +43,9 @@ function getHashValues(value){
 		}
 		else if (value == "value") {
 			arrayValues.push(hashAlphabet[key][0]);
+		}
+		else if (value == "encrypted") {
+			arrayValues.push(hashAlphabet[key][1]);
 		}
 	}
 	return arrayValues;
