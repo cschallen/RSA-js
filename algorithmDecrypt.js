@@ -5,5 +5,5 @@ function triggerDecryptedMethod() {
 }
 
 function decrypt(toDescrypt) {
-    return "teste";
+    return "pegadinha do malandro";
 }

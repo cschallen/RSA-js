@@ -11,11 +11,14 @@ function triggerEncryptedMethod() {
 function encrypt(toEncrypt) {
     var textEncrypted = "";
     for(var i = 0; i < toEncrypt.length; i++){
-        var valueM = getValueByKey(toEncrypt[i].toUpperCase());
-        var charEncrypted;
+        if(toEncrypt[i] != ' '){
 
-        charEncrypted = setValueC(valueM, valueE, valueN);
-        textEncrypted += charEncrypted;
+            var valueM = getValueByKey(toEncrypt[i].toUpperCase());
+            var charEncrypted;
+
+            charEncrypted = setValueC(valueM, valueE, valueN);
+            textEncrypted += charEncrypted;
+        }
     }
     return textEncrypted;
 }
